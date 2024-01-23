@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using DataLayer;
 using System.Text.Json.Serialization;
 using System.Text.Json;
+using DataLayer.Models;
 
 
 namespace MoviesAPIs.Controllers

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace DataLayer
+namespace DataLayer.Models
 {
     public partial class Movie
     {
