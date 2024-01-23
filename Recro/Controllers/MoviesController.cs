@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using MoviesAPIs.Models;
+using DataLayer;
 using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;

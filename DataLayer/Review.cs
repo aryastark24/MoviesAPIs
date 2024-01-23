@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MoviesAPIs.Models
+namespace DataLayer
 {
     public partial class Review
     {

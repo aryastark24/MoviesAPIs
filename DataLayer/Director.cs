@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MoviesAPIs.Models
+namespace DataLayer
 {
-    public partial class Genre
+    public partial class Director
     {
-        public Genre()
+        public Director()
         {
             Movies = new HashSet<Movie>();
         }
 
-        public int GenreId { get; set; }
+        public int DirectorId { get; set; }
         public string Name { get; set; } = null!;
 
         public virtual ICollection<Movie> Movies { get; set; }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MoviesAPIs.Models;
+using DataLayer;
+
 
 namespace MoviesAPIs.Controllers
 {
