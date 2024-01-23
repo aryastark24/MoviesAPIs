@@ -23,6 +23,7 @@ namespace MoviesAPIs.Controllers
         [HttpGet("{movieId}")]
         public ActionResult<IEnumerable<Movie>> GetMovie(int movieId)
         {
+            //● Implement an API endpoint to retrieve a movie with all details of the movie - actors, director, genre, reviews.
             var movie = _movieService.GetMovie(movieId);
 
             if (movie == null)

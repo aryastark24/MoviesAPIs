@@ -31,19 +31,6 @@ namespace MoviesAPIs.Controllers
                 return NotFound();
             }
             return Ok(genre);
-            //var options = new JsonSerializerOptions
-            //{
-            //    ReferenceHandler = ReferenceHandler.Preserve,
-            //    MaxDepth = 32
-            //};
-
-            //var json = JsonSerializer.Serialize(genre, options);
-
-            //return new ContentResult
-            //{
-            //    Content = json,
-            //    ContentType = "application/json"
-            //};
         }
     }
 }

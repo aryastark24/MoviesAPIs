@@ -27,16 +27,20 @@ namespace DataLayer
                 return movies;
             }
         }
-
-        public IEnumerable<Movie> GetMoviesByGenre(int genreId)
+        public IEnumerable<GenreViewModel> GetMoviesByGenre(int genreId)
         {
             using (var context = new MovieDatabaseContext())
             {
                 var genre = context.Movies
-                .Where(m => m.Genres.Any(g => g.GenreId == genreId))
-                .ToList();
+                .Where(m => m.Genres.Any(g => g.GenreId == genreId));
 
-                return genre;
+
+                var GenreViewModel = genre.Select(movie => new GenreViewModel(movie.MovieId, movie.Title)
+                   {
+                       // Add other properties as needed
+                   }).ToList();
+
+                return GenreViewModel;
             }
         }
 

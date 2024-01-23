@@ -16,7 +16,6 @@ namespace DataLayer
         public int MovieId { get; set; }
         public string Title { get; set; } = null!;
         public int? DirectorId { get; set; }
-
         public virtual Director? Director { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
 
