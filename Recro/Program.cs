@@ -1,3 +1,5 @@
+using DataLayer;
+
 namespace MoviesAPIs
 {
     public class Program
@@ -12,6 +14,7 @@ namespace MoviesAPIs
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddScoped<APIService>();
 
             var app = builder.Build();
 

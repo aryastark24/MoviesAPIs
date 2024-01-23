@@ -10,33 +10,34 @@ namespace MoviesAPIs.Controllers
     [Route("[controller]")]
     public class ActorController : ControllerBase
     {
+        //Dependecy Injection
+        public readonly APIService _movieService;
+
+        public ActorController(APIService movieService)
+        {
+            _movieService = movieService;
+        }
         // ApI to hit https://localhost:7293/actor/1
         [HttpGet("{actorid}")]
-        public ActionResult<IEnumerable<Actor>> GetMovie(int actorid)
+        public ActionResult<IEnumerable<Actor>> GetMoviesByActor(int actorid)
         {
+            //● Implement an API endpoint to list all movies by a genre.
 
-            using (var context = new MovieDatabaseContext())
+            var actor = _movieService.GetMoviesByActor(actorid);
+
+            if (actor == null)
             {
-                //● Implement an API endpoint to retrieve an actor with a list of all movies.
-                var actor = context.Actors
-                .Where(a => a.ActorId == actorid)
-                .Include(a => a.Movies)
-                .ToList();
-
-                if (actor == null)
-                {
-                    return NotFound();
-                }
-
-                var options = new JsonSerializerOptions
+                return NotFound();
+            }
+            var options = new JsonSerializerOptions
                 {
                     ReferenceHandler = ReferenceHandler.Preserve,
                     MaxDepth = 32
                 };
 
-                var json = JsonSerializer.Serialize(actor, options);
+             var json = JsonSerializer.Serialize(actor, options);
 
-                return new ContentResult
+             return new ContentResult
                 {
                     Content = json,
                     ContentType = "application/json"
@@ -44,4 +45,3 @@ namespace MoviesAPIs.Controllers
             }
         }
     }
-}
