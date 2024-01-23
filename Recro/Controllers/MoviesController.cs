@@ -13,8 +13,8 @@ namespace MoviesAPIs.Controllers
     [Route("[controller]")]
     public class MoviesController : ControllerBase
     {
-        //Dependecy Injection
-        public readonly APIService _movieService;
+        //Dependency Injection
+        private readonly APIService _movieService;
 
         public MoviesController(APIService movieService)
         {

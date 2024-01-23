@@ -14,6 +14,8 @@ namespace DataLayer
         //    _dbContext = dbContext;
         //}
 
+
+        //● Implement an API endpoint to retrieve a movie with all details of the movie - actors, director, genre, reviews. 
         public IEnumerable<Movie> GetMovie(int movieId)
         {
             using (var context = new MovieDatabaseContext())
@@ -29,6 +31,8 @@ namespace DataLayer
                 return movies;
             }
         }
+
+        //● Implement an API endpoint to list all movies by a genre. 
         public IEnumerable<GenreViewModel> GetMoviesByGenre(int genreId)
         {
             using (var context = new MovieDatabaseContext())
@@ -46,6 +50,7 @@ namespace DataLayer
             }
         }
 
+        //● Implement an API endpoint to retrieve an actor with a list of all movies.
         public IEnumerable<Actor> GetMoviesByActor(int actorid)
         {
             using (var context = new MovieDatabaseContext())
